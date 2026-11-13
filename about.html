@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>About — CFG-MCDC Tool</title>
+<link rel="stylesheet" href="../css/main.css"/>
+<style>
+.about-layout{max-width:900px;margin:0 auto;padding:60px 32px 100px}
+.about-hero{margin-bottom:72px}
+.about-hero .eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--tag-bg);border:1px solid var(--tag-border);border-radius:20px;padding:4px 12px;font-size:11px;font-weight:600;color:var(--accent);letter-spacing:.07em;text-transform:uppercase;margin-bottom:20px}
+.about-hero h1{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;color:var(--text-primary);line-height:1.1;margin-bottom:16px}
+.about-hero p{font-size:15px;color:var(--text-secondary);line-height:1.75;max-width:620px}
+.section{margin-bottom:60px}
+.section h2{font-size:1.35rem;font-weight:700;color:var(--text-primary);letter-spacing:-.02em;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.section-icon{width:28px;height:28px;border-radius:7px;background:var(--tag-bg);border:1px solid var(--tag-border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-icon svg{width:13px;height:13px;stroke:var(--accent);fill:none;stroke-width:2}
+.section p{font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:12px}
+.section p:last-child{margin-bottom:0}
+.algo-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:20px}
+.algo-box h3{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.algo-step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.algo-step:last-child{margin-bottom:0}
+.algo-num{width:26px;height:26px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--accent);flex-shrink:0;margin-top:1px}
+.algo-text{font-size:13px;color:var(--text-secondary);line-height:1.6}
+.algo-text strong{color:var(--text-primary);font-weight:600}
+.tech-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.tech-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px}
+.tech-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:6px;flex-shrink:0}
+.tech-name{font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:3px}
+.tech-desc{font-size:12px;color:var(--text-secondary);line-height:1.5}
+.example-table-wrap{overflow-x:auto;margin-top:16px}
+.truth-table{border-collapse:collapse;font-size:12px;font-family:var(--mono);width:100%}
+.truth-table th{padding:8px 12px;background:rgba(255,255,255,.04);border:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tertiary);text-align:center}
+.truth-table td{padding:8px 12px;border:1px solid var(--border);text-align:center;color:var(--text-primary)}
+.truth-table tr.highlight-row td{background:var(--accent-dim);border-color:var(--accent-border)}
+.truth-table .tv{color:var(--success);font-weight:600}
+.truth-table .fv{color:var(--danger);font-weight:600}
+.truth-table .tcid{color:var(--accent);font-weight:600}
+.team-card{display:flex;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+.team-avatar{width:64px;height:64px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:-.02em}
+.team-name{font-size:17px;font-weight:700;color:var(--text-primary);margin-bottom:3px}
+.team-meta{font-size:13px;color:var(--text-secondary)}
+.team-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a href="../index.html" class="nav-brand">
+    <div class="nav-logo"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="2 10 7 10 9 4 11 16 13 10 18 10"/></svg></div>
+    <span>CFG-MCDC</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="analyser.html" class="nav-link">Analyser</a>
+    <a href="about.html" class="nav-link active">About</a>
+  </div>
+  <a href="analyser.html" class="nav-cta">Launch tool</a>
+</nav>
+
+<div class="about-layout">
+
+  <div class="about-hero anim-fade-up">
+    <div class="eyebrow">About this project</div>
+    <h1>Automated CFG &amp; MC/DC<br>Test Case Generation</h1>
+    <p>A web-based tool that performs static analysis on Java source code to automatically generate control flow graphs and Modified Condition/Decision Coverage test cases — removing the need for manual test design in safety-critical software projects.</p>
+  </div>
+
+  <div class="section anim-fade-up delay-1">
+    <h2><div class="section-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>What is MC/DC?</h2>
+    <p>Modified Condition/Decision Coverage (MC/DC) is a white-box testing criterion that requires each condition in a decision to be shown to independently affect the outcome of that decision. It was introduced by NASA and is mandated by the aviation software certification standard DO-178C for the highest levels of safety-critical software.</p>
+    <p>For a decision with N conditions, MC/DC requires a minimum of N+1 test cases. Each condition must have at least one pair of test cases in which it is the only condition that changes value, and that change causes the overall decision outcome to change. This guarantees that no condition is redundant in the decision logic.</p>
+    <div class="algo-box">
+      <h3>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        MC/DC example — BankAccount.approve()
+      </h3>
+      <p style="font-size:12px;color:var(--text-secondary);margin-bottom:14px">Decision: <span style="font-family:var(--mono);color:var(--accent)">balance &gt;= 0 &amp;&amp; accountActive &amp;&amp; withinLimit</span></p>
+      <div class="example-table-wrap">
+        <table class="truth-table">
+          <thead><tr><th>TC</th><th>balance≥0</th><th>accountActive</th><th>withinLimit</th><th>result</th><th>tests condition</th></tr></thead>
+          <tbody>
+            <tr><td class="tcid">TC1</td><td class="tv">T</td><td class="tv">T</td><td class="tv">T</td><td class="tv">true</td><td style="color:var(--text-tertiary)">baseline</td></tr>
+            <tr class="highlight-row"><td class="tcid">TC2</td><td class="fv">F</td><td class="tv">T</td><td class="tv">T</td><td class="fv">false</td><td style="color:var(--accent);font-family:var(--mono);font-size:11px">balance≥0</td></tr>
+            <tr class="highlight-row"><td class="tcid">TC3</td><td class="tv">T</td><td class="fv">F</td><td class="tv">T</td><td class="fv">false</td><td style="color:var(--accent);font-family:var(--mono);font-size:11px">accountActive</td></tr>
+            <tr class="highlight-row"><td class="tcid">TC4</td><td class="tv">T</td><td class="tv">T</td><td class="fv">F</td><td class="fv">false</td><td style="color:var(--accent);font-family:var(--mono);font-size:11px">withinLimit</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--text-tertiary);margin-top:12px">TC1 vs TC2: only balance changes — result changes → MC/DC satisfied for balance≥0. Same logic applies for TC3 (accountActive) and TC4 (withinLimit).</p>
+    </div>
+  </div>
+
+  <div class="section anim-fade-up delay-2">
+    <h2><div class="section-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>How the tool works</h2>
+    <p>The system uses a five-stage static analysis pipeline to go from raw Java source code to a complete set of MC/DC test cases.</p>
+    <div class="algo-box">
+      <div class="algo-step">
+        <div class="algo-num">1</div>
+        <div class="algo-text"><strong>Upload &amp; validate</strong> — The Java file is received and validated for syntax correctness. Invalid files are rejected with descriptive error messages before any analysis begins.</div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">2</div>
+        <div class="algo-text"><strong>Parse &amp; build AST</strong> — The JavaParser library parses the source code and constructs an Abstract Syntax Tree, a hierarchical representation of every language construct in the program.</div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">3</div>
+        <div class="algo-text"><strong>Construct CFG</strong> — The CFGBuilder traverses the AST and converts each statement, decision, and loop into nodes and directed edges, producing a complete control flow graph for each method.</div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">4</div>
+        <div class="algo-text"><strong>Extract conditions</strong> — The ConditionExtractor identifies all decision nodes in the CFG and decomposes compound Boolean expressions into individual atomic conditions.</div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">5</div>
+        <div class="algo-text"><strong>Generate MC/DC test cases</strong> — The MCDCGenerator applies the independence requirement: for each condition, it constructs a pair of test cases where only that condition changes and the decision outcome changes, annotated with a plain-language explanation.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section anim-fade-up delay-3">
+    <h2><div class="section-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>Technology stack</h2>
+    <p>The tool is built as a three-tier web application: a Java Spring Boot backend performing static analysis, and an HTML/CSS/JavaScript frontend rendering the interactive CFG and results.</p>
+    <div class="tech-grid">
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">Java + Spring Boot</div><div class="tech-desc">Backend REST API, file handling, and all analysis pipeline logic</div></div></div>
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">JavaParser 3.25</div><div class="tech-desc">AST construction from Java source code via static analysis</div></div></div>
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">D3.js</div><div class="tech-desc">Interactive, zoomable, pannable SVG control flow graph rendering</div></div></div>
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">HTML + CSS + JS</div><div class="tech-desc">Frontend served as static files from the Spring Boot resources folder</div></div></div>
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">Gradle</div><div class="tech-desc">Build system and dependency management for the backend</div></div></div>
+      <div class="tech-card"><div class="tech-dot"></div><div><div class="tech-name">JSON REST API</div><div class="tech-desc">Communication layer between frontend and backend analysis engine</div></div></div>
+    </div>
+  </div>
+
+  <div class="section anim-fade-up delay-4">
+    <h2><div class="section-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>Project details</h2>
+    <div class="team-card">
+      <div class="team-avatar">CB</div>
+      <div>
+        <div class="team-name">Chibuye Banda</div>
+        <div class="team-meta">SIN: 22997883 · CS400 Project Seminars</div>
+        <div class="team-meta">Supervisor: Mr Mumba · Copperbelt University</div>
+        <div class="team-tags">
+          <span class="tag tag-purple">Computer Science</span>
+          <span class="tag tag-green">Software Testing</span>
+          <span class="tag tag-amber">2024/2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="../js/main.js"></script>
+</body>
+</html>
